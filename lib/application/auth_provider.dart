@@ -1,16 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:setup_provider/domain/facade/auth_facade.dart';
-import 'package:setup_provider/domain/facade/home_facade.dart';
 import 'package:setup_provider/infastructura/servises/app_helper.dart';
 import 'package:setup_provider/infastructura/servises/local_store.dart';
 
 
 class AuthProvider extends ChangeNotifier {
   final AuthFacade authRepo;
-  final HomeFacade homeRepo;
+ 
   bool isLoading = false;
 
-  AuthProvider(this.authRepo, this.homeRepo);
+  AuthProvider(this.authRepo);
 
   login(
       {required BuildContext context, required VoidCallback onSuccess}) async {

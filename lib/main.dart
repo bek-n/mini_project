@@ -34,10 +34,10 @@ void main() async {
   setUp();
   runApp(
     EasyLocalization(
-      supportedLocales: [Locale("uz", "UZ")],
+      supportedLocales: [const Locale("uz", "UZ")],
       path: 'assets/tr',
-      startLocale: Locale("uz", "UZ"),
-      fallbackLocale: Locale("uz", "UZ"),
+      startLocale: const Locale("uz", "UZ"),
+      fallbackLocale: const Locale("uz", "UZ"),
       child: MultiProvider(
         providers: [
           ChangeNotifierProvider(
