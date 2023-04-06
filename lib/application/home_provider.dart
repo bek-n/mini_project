@@ -3,11 +3,11 @@ import 'package:setup_provider/domain/facade/home_facade.dart';
 import 'package:setup_provider/infastructura/servises/app_helper.dart';
 
 
-class AuthProvider extends ChangeNotifier {
+class HomeProvider extends ChangeNotifier {
   final HomeFacade homeRepo;
   bool isLoading = false;
 
-  AuthProvider(this.homeRepo);
+  HomeProvider(this.homeRepo);
 
   login(
       {required BuildContext context, required VoidCallback onSuccess}) async {

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:setup_provider/application/auth_provider.dart';
+import 'package:setup_provider/application/home_provider.dart';
 import 'package:setup_provider/domain/di/di.dart';
 import 'application/app_provider.dart';
 import 'application/main_provider.dart';
@@ -48,6 +49,9 @@ void main() async {
           ),
           ChangeNotifierProvider(
             create: (BuildContext context) => MainProvider(),
+          ),
+          ChangeNotifierProvider(
+            create: (BuildContext context) => HomeProvider(homeRepo),
           ),
         ],
         child: const AppWidget(),
