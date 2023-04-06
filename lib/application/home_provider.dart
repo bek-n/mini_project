@@ -2,22 +2,21 @@ import 'package:flutter/cupertino.dart';
 import 'package:setup_provider/domain/facade/home_facade.dart';
 import 'package:setup_provider/infastructura/servises/app_helper.dart';
 
-
 class HomeProvider extends ChangeNotifier {
   final HomeFacade homeRepo;
   bool isLoading = false;
 
   HomeProvider(this.homeRepo);
 
-  login(
-      {required BuildContext context, required VoidCallback onSuccess}) async {
+  getInfos({
+    required BuildContext context,
+  }) async {
     isLoading = true;
     notifyListeners();
     final res = await homeRepo.getRestaurants();
     res.fold((data) {
       isLoading = false;
       notifyListeners();
-      onSuccess();
     }, (error) {
       isLoading = false;
       notifyListeners();

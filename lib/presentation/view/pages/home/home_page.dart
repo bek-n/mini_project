@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
+import 'package:setup_provider/application/home_provider.dart';
+import 'package:setup_provider/domain/model/restaurant_model.dart';
 import 'package:setup_provider/presentation/style/style.dart';
 
 class HomePage extends StatefulWidget {
@@ -10,13 +13,24 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  RestaurantModel? rest;
+  getDatas() async {
+    rest = await context.read<HomeProvider>().getInfos(context: context);
+  }
+
   @override
-  void initState() {
-   
+  initState() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      getDatas();
+    });
+
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
+    final event = context.read<HomeProvider>();
+    final state = context.watch<HomeProvider>();
     return Scaffold(
         body: SafeArea(
       child: Padding(
@@ -32,7 +46,7 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               child: ListView.builder(
                 shrinkWrap: true,
-                itemCount: 1,
+                itemCount: rest?.data?.length,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
                     height: 248.h,
@@ -45,7 +59,11 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         Container(
                           height: 118.h,
-                          decoration: const BoxDecoration(
+                          decoration: BoxDecoration(
+                              // image: DecorationImage(
+                              //     image: NetworkImage(
+                              //         '${rest?.data?[index].backgroundImg}'),
+                              //     fit: BoxFit.cover),
                               color: Style.primaryColor,
                               borderRadius: BorderRadius.only(
                                   topLeft: Radius.circular(24),
@@ -55,7 +73,7 @@ class _HomePageState extends State<HomePage> {
                         Padding(
                           padding: const EdgeInsets.only(left: 18),
                           child: Text(
-                            'Name',
+                            '${rest?.data?[index].deliveryTime}',
                             style: Style.bold(),
                           ),
                         ),
