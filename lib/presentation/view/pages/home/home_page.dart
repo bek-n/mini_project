@@ -31,6 +31,7 @@ class HomePage extends StatelessWidget {
                         color: Style.black,
                         borderRadius: BorderRadius.circular(24)),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
                           height: 118.h,
@@ -39,6 +40,15 @@ class HomePage extends StatelessWidget {
                               borderRadius: BorderRadius.only(
                                   topLeft: Radius.circular(24),
                                   topRight: Radius.circular(24))),
+                        ),
+                       
+                        Text(
+                          'Name',
+                          style: Style.bold(),
+                        ),
+                        Text(
+                          'Description',
+                          style: Style.regular(),
                         )
                       ],
                     ),
