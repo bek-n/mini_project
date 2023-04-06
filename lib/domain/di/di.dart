@@ -14,3 +14,4 @@ setUp(){
 }
 
 final authRepo = getIt.get<AuthFacade>();
+final homeRepo = getIt.get<HomeFacade>();
