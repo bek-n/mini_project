@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:setup_provider/presentation/style/style.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -6,9 +7,15 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text("Home Page",style: Theme.of(context).textTheme.labelMedium,),
+        body: SafeArea(
+      child: Column(
+        children: [
+          Text(
+            'Restaurants',
+            style: Style.bold(size: 20, color: Style.black),
+          )
+        ],
       ),
-    );
+    ));
   }
 }

@@ -50,7 +50,7 @@ void main() async {
             create: (BuildContext context) => MainProvider(),
           ),
         ],
-        child: AppWidget(),
+        child: const AppWidget(),
       ),
     ),
   );
