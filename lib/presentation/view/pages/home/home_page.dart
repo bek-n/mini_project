@@ -41,14 +41,25 @@ class HomePage extends StatelessWidget {
                                   topLeft: Radius.circular(24),
                                   topRight: Radius.circular(24))),
                         ),
-                       
-                        Text(
-                          'Name',
-                          style: Style.bold(),
+                        27.verticalSpace,
+                        Padding(
+                          padding: const EdgeInsets.only(left: 18),
+                          child: Text(
+                            'Name',
+                            style: Style.bold(),
+                          ),
                         ),
-                        Text(
-                          'Description',
-                          style: Style.regular(),
+                        3.verticalSpace,
+                        Padding(
+                          padding: const EdgeInsets.only(left: 18),
+                          child: Text(
+                            'Description',
+                            style: Style.regular(),
+                          ),
+                        ),
+                        16.verticalSpace,
+                        const Divider(
+                          color: Style.white,
                         )
                       ],
                     ),
