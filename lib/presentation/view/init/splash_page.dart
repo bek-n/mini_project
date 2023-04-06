@@ -18,7 +18,7 @@ class SplashPage extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             if (snapshot.data ?? false) {
-              return MainPage(); // mainPage
+              return const MainPage(); // mainPage
             } else {
               return MainPage(); // loginPage
             }
