@@ -5,4 +5,7 @@ abstract class AuthFacade {
 
   Future<Either<UserModel,String>> login(String email);
 
+  
+
+
 }
