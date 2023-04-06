@@ -17,6 +17,7 @@ class _HomePageState extends State<HomePage> {
   RestaurantModel? rest;
   getDatas() async {
     rest = await context.read<HomeProvider>().getInfos(context: context);
+    print('length ${rest?.links}');
   }
 
   @override
@@ -76,7 +77,7 @@ class _HomePageState extends State<HomePage> {
                                   Padding(
                                     padding: const EdgeInsets.only(left: 18),
                                     child: Text(
-                                      '${rest?.data?[index].deliveryTime}',
+                                      '${rest?.data?[index].status}',
                                       style: Style.bold(),
                                     ),
                                   ),

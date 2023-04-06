@@ -10,6 +10,7 @@ class HomeRepo implements HomeFacade {
     try {
       final res = await DioService.client().get(
           "/api/v1/rest/shops/paginate?perPage=15&page=1&type=restaurant&lang=en");
+          
 
       return left(RestaurantModel.fromJson(res.data));
     } catch (e) {
