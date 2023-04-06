@@ -2,11 +2,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:proste_indexed_stack/proste_indexed_stack.dart';
 import 'package:provider/provider.dart';
-import 'package:setup_provider/application/auth_provider.dart';
 import 'package:setup_provider/application/main_provider.dart';
-import 'package:setup_provider/infastructura/servises/local_store.dart';
-import 'package:setup_provider/presentation/components/custom_button.dart';
-import 'package:setup_provider/presentation/route.dart';
 import 'package:setup_provider/presentation/view/pages/home/home_page.dart';
 import 'package:setup_provider/presentation/view/pages/notification/notification_page.dart';
 import 'package:setup_provider/presentation/view/pages/profile/profile_page.dart';
@@ -51,10 +47,10 @@ class _MainPageState extends State<MainPage> {
         return ProsteIndexedStack(
           index: state.currentIndex,
           children: [
-            IndexedStackChild(child: HomePage()),
-            IndexedStackChild(child: SearchPage()),
-            IndexedStackChild(child: NotificationPage()),
-            IndexedStackChild(child: ProfilePage()),
+            IndexedStackChild(child: const HomePage()),
+            IndexedStackChild(child: const SearchPage()),
+            IndexedStackChild(child: const NotificationPage()),
+            IndexedStackChild(child: const ProfilePage()),
           ],
         );
       }),
@@ -67,11 +63,11 @@ class _MainPageState extends State<MainPage> {
           },
           type: BottomNavigationBarType.fixed,
           items: [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-            BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
-            BottomNavigationBarItem(
+            const BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+            const BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
+            const BottomNavigationBarItem(
                 icon: Icon(Icons.notifications), label: "Notification"),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile")
+            const BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile")
           ],
         );
       }),

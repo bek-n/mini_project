@@ -26,19 +26,19 @@ class AppWidget extends StatelessWidget {
             theme: ThemeData.light().copyWith(
                 primaryColor: Style.primaryColor,
                 colorScheme:
-                    ColorScheme.light().copyWith(error: Style.errorLight),
+                    const ColorScheme.light().copyWith(error: Style.errorLight),
                 textTheme: TextTheme(
                   labelSmall: Style.regular(size: 12),
                   labelMedium: Style.normal(),
                   labelLarge: Style.bold(),
-                  titleSmall: Style.regular(color: Style.white,size: 12),
+                  titleSmall: Style.regular(color: Style.white, size: 12),
                   titleMedium: Style.normal(color: Style.white),
                   titleLarge: Style.bold(color: Style.white),
                 )),
             darkTheme: ThemeData.dark().copyWith(
                 primaryColor: Style.primaryDarkColor,
                 colorScheme:
-                    ColorScheme.dark().copyWith(error: Style.errorDark),
+                    const ColorScheme.dark().copyWith(error: Style.errorDark),
                 textTheme: TextTheme(
                     labelSmall: Style.regular(color: Style.white),
                     labelMedium: Style.normal(color: Style.white),
@@ -51,9 +51,9 @@ class AppWidget extends StatelessWidget {
               ) {
                 if (snapshot.data == ConnectivityResult.wifi ||
                     snapshot.data == ConnectivityResult.mobile) {
-                  return SplashPage();
+                  return const SplashPage();
                 } else {
-                  return NoInternet();
+                  return const NoInternet();
                 }
               },
             ),

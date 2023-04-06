@@ -7,7 +7,7 @@ import '../style/style.dart';
 class Loading extends StatelessWidget {
   final Color bgColor;
 
-  const Loading({Key? key, this.bgColor = Style.white}) : super(key: key);
+  const Loading({Key? key, this.bgColor = Style.primaryColor}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
