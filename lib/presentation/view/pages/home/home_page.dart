@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:setup_provider/application/home_provider.dart';
+import 'package:setup_provider/presentation/components/custom_network_image.dart';
 import 'package:setup_provider/presentation/components/loading.dart';
 import 'package:setup_provider/presentation/style/style.dart';
 
@@ -52,23 +53,16 @@ class _HomePageState extends State<HomePage> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Container(
-                                    height: 118.h,
-                                    decoration: const BoxDecoration(
-                                        // image: DecorationImage(
-                                        //     image: NetworkImage(
-                                        //         '${rest?.data?[index].backgroundImg}'),
-                                        //     fit: BoxFit.cover),
-                                        color: Style.primaryColor,
-                                        borderRadius: BorderRadius.only(
-                                            topLeft: Radius.circular(24),
-                                            topRight: Radius.circular(24))),
-                                  ),
+                                  CustomNetworkImage(
+                                      url: '${state.lst[index].backgroundImg}',
+                                      height: 118,
+                                      width: double.infinity,
+                                      radius: 24),
                                   27.verticalSpace,
                                   Padding(
                                     padding: const EdgeInsets.only(left: 18),
                                     child: Text(
-                                      '${state.lst[index].status}',
+                                      '${state.lst[index].id}',
                                       style: Style.bold(),
                                     ),
                                   ),
