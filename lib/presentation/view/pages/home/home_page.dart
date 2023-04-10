@@ -85,13 +85,35 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   Row(
                                     children: [
+                                      22.horizontalSpace,
                                       Image.asset(
                                         'assets/images/time.png',
                                         height: 24,
                                         width: 24,
                                       ),
+                                      15.horizontalSpace,
                                       Text(
                                         '${state.lst[index].deliveryTime?.from} - ${state.lst[index].deliveryTime?.to} ${state.lst[index].deliveryTime?.type}',
+                                        style: Style.bold(
+                                            color: Style.black, size: 16),
+                                      ),
+                                      22.horizontalSpace,
+                                      Container(
+                                        height: 5.h,
+                                        width: 5.w,
+                                        decoration: const BoxDecoration(
+                                            color: Style.grey,
+                                            shape: BoxShape.circle),
+                                      ),
+                                      17.horizontalSpace,
+                                      Image.asset(
+                                        'assets/images/star.png',
+                                        height: 19,
+                                        width: 19,
+                                      ),
+                                      11.horizontalSpace,
+                                      Text(
+                                        '${state.lst[index].ratingAvg?.ceil()}',
                                         style: Style.bold(
                                             color: Style.black, size: 16),
                                       ),

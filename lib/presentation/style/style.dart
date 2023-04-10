@@ -7,12 +7,13 @@ abstract class Style {
 
   static const Color primaryColor = Colors.blue;
   static const Color primaryDarkColor = const Color(0xfff4f4f4);
-  static const Color black = const Color(0xff000000);
-  static const Color white = const Color(0xffffffff);
+  static const Color black =  Color(0xff000000);
+  static const Color white =  Color(0xffffffff);
   static const Color textColor = Colors.grey;
   static const Color transparent = Colors.transparent;
   static const Color errorLight = Colors.red;
   static const Color errorDark = Colors.white;
+  static const Color grey = Colors.grey;
 
   static regular({int size = 14, Color color = textColor}) {
     return GoogleFonts.inter(
