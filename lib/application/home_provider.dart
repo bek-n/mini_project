@@ -11,7 +11,6 @@ class HomeProvider extends ChangeNotifier {
   HomeProvider(this.homeRepo);
 
   List<Datum> lst = [];
-  Translation? tr;
 
   getInfos({
     required BuildContext context,
@@ -19,12 +18,10 @@ class HomeProvider extends ChangeNotifier {
     isLoading = true;
     notifyListeners();
     final res = await homeRepo.getRestaurants();
-    
 
     res.fold((data) {
       lst = data.data ?? [];
-      tr = data.restaurant;
-     
+
       isLoading = false;
       notifyListeners();
     }, (error) {

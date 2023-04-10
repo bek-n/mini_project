@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                                   Padding(
                                     padding: const EdgeInsets.only(left: 18),
                                     child: Text(
-                                      '${state.tr?.title}',
+                                      '${state.lst[index].translation?.title}',
                                       style: Style.bold(),
                                     ),
                                   ),
