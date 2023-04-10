@@ -68,15 +68,17 @@ class _HomePageState extends State<HomePage> {
                                       style: Style.bold(),
                                     ),
                                   ),
-                                  3.verticalSpace,
+                                  5.verticalSpace,
                                   Padding(
                                     padding: const EdgeInsets.only(left: 18),
                                     child: Text(
-                                      'Description',
+                                      '${state.lst[index].translation?.description}',
                                       style: Style.regular(),
+                                      overflow: TextOverflow.ellipsis,
+                                      maxLines: 2,
                                     ),
                                   ),
-                                  16.verticalSpace,
+                                  12.verticalSpace,
                                   const Divider(
                                     color: Style.white,
                                   )
