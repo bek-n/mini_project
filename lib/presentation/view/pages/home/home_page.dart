@@ -47,10 +47,10 @@ class _HomePageState extends State<HomePage> {
                           itemCount: state.lst.length,
                           itemBuilder: (BuildContext context, int index) {
                             return Container(
+                              margin: EdgeInsets.only(bottom: 12),
                               height: 248.h,
                               width: double.infinity,
                               decoration: BoxDecoration(
-                                  color: Style.black,
                                   borderRadius: BorderRadius.circular(24)),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,7 +65,8 @@ class _HomePageState extends State<HomePage> {
                                     padding: const EdgeInsets.only(left: 18),
                                     child: Text(
                                       '${state.lst[index].translation?.title}',
-                                      style: Style.bold(),
+                                      style: Style.bold(
+                                          color: Style.black, size: 16),
                                     ),
                                   ),
                                   5.verticalSpace,
@@ -73,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                                     padding: const EdgeInsets.only(left: 18),
                                     child: Text(
                                       '${state.lst[index].translation?.description}',
-                                      style: Style.regular(),
+                                      style: Style.regular(color: Style.black),
                                       overflow: TextOverflow.ellipsis,
                                       maxLines: 2,
                                     ),
@@ -81,6 +82,20 @@ class _HomePageState extends State<HomePage> {
                                   12.verticalSpace,
                                   const Divider(
                                     color: Style.white,
+                                  ),
+                                  Row(
+                                    children: [
+                                      Image.asset(
+                                        'assets/images/time.png',
+                                        height: 24,
+                                        width: 24,
+                                      ),
+                                      Text(
+                                        '${state.lst[index].deliveryTime?.from} - ${state.lst[index].deliveryTime?.from} min',
+                                        style: Style.bold(
+                                            color: Style.black, size: 16),
+                                      ),
+                                    ],
                                   )
                                 ],
                               ),
