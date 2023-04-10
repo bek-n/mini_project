@@ -3,33 +3,39 @@ class RestaurantModel {
         this.data,
         this.links,
         this.meta,
+        this.restaurant,
     });
 
     List<Datum>? data;
     Links? links;
     Meta? meta;
+    Translation? restaurant;
 
     RestaurantModel copyWith({
         List<Datum>? data,
         Links? links,
         Meta? meta,
+        Translation? restaurant,
     }) => 
         RestaurantModel(
             data: data ?? this.data,
             links: links ?? this.links,
             meta: meta ?? this.meta,
+            restaurant: restaurant?? this.restaurant
         );
 
     factory RestaurantModel.fromJson(Map<String, dynamic> json) => RestaurantModel(
         data: json["data"] == null ? [] : List<Datum>.from(json["data"]!.map((x) => Datum.fromJson(x))),
         links: json["links"] == null ? null : Links.fromJson(json["links"]),
         meta: json["meta"] == null ? null : Meta.fromJson(json["meta"]),
+        restaurant: json["translation"] == null ? null : Translation.fromJson(json["translation"]),
     );
 
     Map<String, dynamic> toJson() => {
         "data": data == null ? [] : List<dynamic>.from(data!.map((x) => x.toJson())),
         "links": links?.toJson(),
         "meta": meta?.toJson(),
+        "translation": restaurant?.toJson(),
     };
 }
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:setup_provider/application/home_provider.dart';
+import 'package:setup_provider/domain/model/restaurant_model.dart';
 import 'package:setup_provider/presentation/components/custom_network_image.dart';
 import 'package:setup_provider/presentation/components/loading.dart';
 import 'package:setup_provider/presentation/style/style.dart';
@@ -17,6 +18,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     context.read<HomeProvider>().getInfos(context: context);
+
     super.initState();
   }
 
@@ -62,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                                   Padding(
                                     padding: const EdgeInsets.only(left: 18),
                                     child: Text(
-                                      '${state.lst[index].id}',
+                                      '${state.tr?.title}',
                                       style: Style.bold(),
                                     ),
                                   ),
