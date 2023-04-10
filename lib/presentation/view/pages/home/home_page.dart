@@ -91,7 +91,7 @@ class _HomePageState extends State<HomePage> {
                                         width: 24,
                                       ),
                                       Text(
-                                        '${state.lst[index].deliveryTime?.from} - ${state.lst[index].deliveryTime?.from} min',
+                                        '${state.lst[index].deliveryTime?.from} - ${state.lst[index].deliveryTime?.to} ${state.lst[index].deliveryTime?.type}',
                                         style: Style.bold(
                                             color: Style.black, size: 16),
                                       ),
