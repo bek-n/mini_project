@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:setup_provider/application/home_provider.dart';
-import 'package:setup_provider/domain/model/restaurant_model.dart';
 import 'package:setup_provider/presentation/components/loading.dart';
 import 'package:setup_provider/presentation/style/style.dart';
 
@@ -15,7 +14,14 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
+  void initState() {
+    context.read<HomeProvider>().getInfos(context: context);
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     final event = context.read<HomeProvider>();
     final state = context.watch<HomeProvider>();
     return Scaffold(

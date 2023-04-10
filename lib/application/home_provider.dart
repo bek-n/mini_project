@@ -18,9 +18,11 @@ class HomeProvider extends ChangeNotifier {
     isLoading = true;
     notifyListeners();
     final res = await homeRepo.getRestaurants();
+    
 
     res.fold((data) {
       lst = data.data ?? [];
+     
       isLoading = false;
       notifyListeners();
     }, (error) {
