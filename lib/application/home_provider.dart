@@ -14,6 +14,7 @@ class HomeProvider extends ChangeNotifier {
     isLoading = true;
     notifyListeners();
     final res = await homeRepo.getRestaurants();
+
     res.fold((data) {
       isLoading = false;
       notifyListeners();
