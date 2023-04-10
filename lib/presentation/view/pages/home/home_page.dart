@@ -14,21 +14,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  RestaurantModel? rest;
-  getDatas() async {
-    rest = await context.read<HomeProvider>().getInfos(context: context);
-    print('length ${rest?.links}');
-  }
-
-  @override
-  initState() {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      getDatas();
-    });
-
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     final event = context.read<HomeProvider>();
@@ -50,7 +35,7 @@ class _HomePageState extends State<HomePage> {
                       Expanded(
                         child: ListView.builder(
                           shrinkWrap: true,
-                          itemCount: rest?.data?.length,
+                          itemCount: state.lst.length,
                           itemBuilder: (BuildContext context, int index) {
                             return Container(
                               height: 248.h,
@@ -77,7 +62,7 @@ class _HomePageState extends State<HomePage> {
                                   Padding(
                                     padding: const EdgeInsets.only(left: 18),
                                     child: Text(
-                                      '${rest?.data?[index].status}',
+                                      '${state.lst[index].status}',
                                       style: Style.bold(),
                                     ),
                                   ),
